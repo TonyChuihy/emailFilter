@@ -1,0 +1,31 @@
+annotated-types @ file:///C:/miniconda3/conda-bld/annotated-types_1761745026115/work
+anyio @ file:///C:/Users/dev-admin/buildout/croot/anyio_1761938850116/work
+blinker @ file:///home/conda/feedstock_root/build_artifacts/blinker_1731096409132/work
+certifi @ file:///C:/miniconda3/conda-bld/certifi_1763135348707/work/certifi
+charset-normalizer==3.4.4
+click @ file:///D:/bld/click_1763248552209/work
+colorama @ file:///C:/Users/dev-admin/buildout/croot/colorama_1759952627215/work
+distro @ file:///C:/Users/dev-admin/buildout/croot/distro_1759969922852/work
+Flask @ file:///C:/Users/dev-admin/buildout/croot/flask_1759970065939/work
+flask-cors==6.0.1
+h11 @ file:///C:/miniconda3/conda-bld/h11_1761931280691/work
+httpcore @ file:///C:/Users/dev-admin/buildout/croot/httpcore_1761939678908/work
+httpx @ file:///C:/Users/dev-admin/buildout/croot/httpx_1761941099328/work
+idna @ file:///C:/Users/dev-admin/buildout/croot/idna_1762551230734/work
+itsdangerous @ file:///C:/Users/dev-admin/buildout/croot/itsdangerous_1759965296215/work
+Jinja2 @ file:///C:/Users/dev-admin/buildout/croot/jinja2_1761938590194/work
+jiter @ file:///C:/miniconda3/conda-bld/jiter_1762897337474/work
+MarkupSafe @ file:///C:/Users/dev-admin/buildout/croot/markupsafe_1759955189290/work
+openai @ file:///home/conda/feedstock_root/build_artifacts/openai_1763083634698/work
+pydantic @ file:///C:/miniconda3/conda-bld/pydantic_1762505408874/work
+pydantic_core @ file:///C:/Users/dev-admin/buildout/croot/pydantic-core_1761941601530/work
+pypiwin32==223
+pywin32==311
+requests==2.32.5
+sniffio @ file:///C:/Users/dev-admin/buildout/croot/sniffio_1761938759532/work
+tqdm @ file:///C:/miniconda3/conda-bld/tqdm_1762863371227/work
+typing-inspection @ file:///C:/Users/dev-admin/buildout/croot/typing-inspection_1761942581967/work
+typing_extensions @ file:///C:/Users/dev-admin/buildout/croot/typing_extensions_1759955056205/work
+urllib3==2.5.0
+websockets @ file:///C:/Users/dev-admin/buildout/croot/websockets_1759990279615/work
+Werkzeug @ file:///C:/Users/dev-admin/buildout/croot/werkzeug_1759968538419/work
