@@ -1,3 +1,4 @@
+````markdown
 # Outlook AI 助手（Windows 專用）
 
 自動讀取 Outlook 新郵件 → 交給 Azure OpenAI 智能回覆 → 前端即時顯示
@@ -15,9 +16,7 @@ pip install pywin32 flask flask-cors requests openai python-dateutil
 pip install -r requirements.txt
 ```
 
-````
-
-> 如果遇到問題，安裝完 pywin32 後請再執行一次（只做一次即可）
+> 如果遇到問題，安裝完 pywin32 後請再執行一次（只做一次即可）  
 > `python Scripts/pywin32_postinstall.py -install`
 
 ### 2. 依序啟動三個服務（開三個終端機）
