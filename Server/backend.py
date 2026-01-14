@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 # 配置OpenAI客户端
 client = AzureOpenAI(
-    api_key="1c7d451126694bc3b872448f73eb795e",
+    api_key="1c7d451126694bc3b872448f73eb795e" , #Expired, you need to provide a valid API key
     api_version="2024-06-01",
     azure_endpoint="https://hkust.azure-api.net",
 )
