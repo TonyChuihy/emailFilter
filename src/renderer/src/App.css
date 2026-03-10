@@ -1,0 +1,574 @@
+/* src/renderer/src/App.css */
+
+/* 覆盖 main.css 中的居中样式，确保 App 填充整个窗口 */
+body {
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  background-image: none !important;
+  user-select: auto !important;
+}
+
+#root {
+  display: block !important;
+  align-items: unset !important;
+  justify-content: unset !important;
+  flex-direction: unset !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+/* 系統塊 - 頂部橫向佈局 */
+.system-block {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 1rem 2rem;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.system-block-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.app-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.system-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.email-overview {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.overview-item {
+  background-color: #eff6ff;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+}
+
+/* 電郵檢測區 */
+.email-detection-area {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f9fafb;
+  width: 100%;
+}
+
+.email-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.empty-state {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #6b7280;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.empty-state h2 {
+  color: #1e40af;
+  margin-bottom: 1rem;
+}
+
+.email-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.email-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.email-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-color: #bfdbfe;
+  transform: translateY(-2px);
+}
+
+/* Block 狀態 - 橙色主題 */
+.email-card-block {
+  border-color: #fb923c;
+  background-color: #fff7ed;
+  border-width: 2px;
+}
+
+.email-card-block:hover {
+  border-color: #f97316;
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.2);
+}
+
+/* Alerted 狀態 - 紅色主題 */
+.email-card-alerted {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+  border-width: 2px;
+}
+
+.email-card-alerted:hover {
+  border-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+/* Pending 狀態 */
+.email-card-pending {
+  border-color: #94a3b8;
+  background-color: #f8fafc;
+  border-style: dashed;
+}
+
+/* 狀態標籤 */
+.email-status-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-block {
+  background-color: #fb923c;
+  color: #ffffff;
+}
+
+.status-alerted {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+
+.status-pending {
+  background-color: #94a3b8;
+  color: #ffffff;
+}
+
+/* Block 詞信息 */
+.email-block-info {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #fff7ed;
+  border-left: 3px solid #fb923c;
+  border-radius: 4px;
+}
+
+.email-block-info strong {
+  color: #ea580c;
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.block-words-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.block-word-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: #fb923c;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Alert 原因信息 */
+.email-alert-info {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #fef2f2;
+  border-left: 3px solid #ef4444;
+  border-radius: 4px;
+}
+
+.email-alert-info strong {
+  color: #dc2626;
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.alert-reason {
+  color: #991b1b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.email-subject {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+}
+
+/* Block 狀態下的主題色 */
+.email-card-block .email-subject {
+  color: #ea580c;
+}
+
+/* Alerted 狀態下的主題色 */
+.email-card-alerted .email-subject {
+  color: #dc2626;
+}
+
+.email-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.email-preview {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.page-btn {
+  padding: 0.6rem 1.25rem;
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.page-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.page-info {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.settings-btn {
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.settings-btn:hover {
+  background-color: #2563eb;
+}
+
+/* 彈窗樣式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e40af;
+  margin: 0;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6b7280;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.modal-body {
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.word-list-section {
+  background-color: #f9fafb;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.word-list-section h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.word-input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.word-input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.word-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.add-btn {
+  padding: 0.6rem 1.25rem;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.add-btn:hover {
+  background-color: #059669;
+}
+
+.word-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  min-height: 40px;
+}
+
+.empty-list {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.word-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #eff6ff;
+  color: #1e40af;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid #bfdbfe;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.remove-btn:hover {
+  background-color: #fee2e2;
+}
+
+/* 響應式 */
+@media (max-width: 1024px) {
+  .email-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .email-container {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .system-block {
+    padding: 1rem;
+  }
+
+  .system-block-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .system-info {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .email-overview {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .email-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .email-container {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .modal-content {
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.25rem;
+  }
+
+  .email-container {
+    padding: 0.75rem;
+  }
+
+  .email-grid {
+    gap: 0.75rem;
+  }
+
+  .email-card {
+    padding: 1rem;
+  }
+}

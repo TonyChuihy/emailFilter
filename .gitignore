@@ -1,19 +1,7 @@
-# Dependencies
-node_modules/
-Server/node_modules/
-
-# Environment variables
-.env
-.env.local
-Server/key.env
-# IDE
-.vscode/
-.idea/
-
-# OS
+node_modules
+dist
+out
 .DS_Store
-Thumbs.db
-
-# Build/dist
-dist/
-build/
+.eslintcache
+*.log*
+release/*.exe
